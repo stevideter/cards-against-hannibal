@@ -1,0 +1,12 @@
+.gameboard {
+    background-color: white;   
+}
+.blackcard {
+    margin: 10px;
+
+}
+.whitecards {
+    margin: 10px;
+    display: flex;
+    flex-direction:row;
+}

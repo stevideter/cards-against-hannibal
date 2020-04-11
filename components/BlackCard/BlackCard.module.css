@@ -1,0 +1,22 @@
+.card {
+  background: black;
+  color: white;
+  width: 150px;
+  height: 300px;
+  padding: 10px;
+  font-size: xx-large;
+  font-weight: bolder;
+  border-radius: 25px;
+  border: 2px solid black;
+  position: relative;
+}
+
+.card p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  text-align: center;
+
+}

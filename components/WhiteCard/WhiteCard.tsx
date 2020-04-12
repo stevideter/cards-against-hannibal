@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const StyledWhiteCard = styled.div`
 background: white;
@@ -21,7 +21,11 @@ text-align: center;
 font-size: large;
 font-weight: bolder;
 `
-const WhiteCard = (props) => (
+interface WhiteCardProps {
+  id: string;
+  text: string;
+}
+const WhiteCard = (props: WhiteCardProps) => (
   <StyledWhiteCard id={props.id}>
     <StyledP>{props.text}</StyledP>
   </StyledWhiteCard>

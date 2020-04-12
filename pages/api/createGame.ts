@@ -3,14 +3,7 @@ import fetch from "isomorphic-unfetch";
 const setId = "JP8FV";
 const cardcastUrl = `https://api.cardcastgame.com/v1/decks/${setId}/cards`;
 
-interface CardcastCard {
-  text: string[];
-}
-interface CardcastCardSet {
-  calls: CardcastCard[];
-  responses: CardcastCard[];
-}
-export default async (_req: Request, res: Response) => {
+export default async (_req: Request, res: Response): Promise<void> => {
   try {
     const fetchResponse = await fetch(cardcastUrl);
     const data: CardcastCardSet = await fetchResponse.json();

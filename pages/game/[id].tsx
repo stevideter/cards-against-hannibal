@@ -2,11 +2,13 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import GameBoard from "../../components/GameBoard/GameBoard";
 
-async function fetcher(url: string) {
+async function fetcher(url: string): Promise<GameData> {
   return fetch(url).then((r) => r.json());
 }
 
-const Game = () => {
+const Game = (): JSX.Element => {
+  const router = useRouter();
+  const { id } = router.query;
   const { data, error } = useSWR("/api/createGame", fetcher);
   if (error) {
     return <div>Failed to load</div>;
@@ -16,8 +18,6 @@ const Game = () => {
   }
 
   const { blackCards, whiteCards } = data;
-  const router = useRouter();
-  const { id } = router.query;
 
   return (
     <div>

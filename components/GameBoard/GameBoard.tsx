@@ -13,17 +13,14 @@ const StyledWhiteCards = styled.div`
   display: flex;
   flex-direction:row;
 `;
-interface Card {
-  text: string;
-  id: string;
-}
 interface GameBoardProps {
   whiteCards: Card[];
   blackCards: Card[];
 }
-const GameBoard = (props: GameBoardProps) => {
-  let whiteCards = [];
-  let fullDeck = [ ...props.whiteCards ];
+
+const GameBoard = (props: GameBoardProps): JSX.Element => {
+  const whiteCards = [];
+  const fullDeck = [ ...props.whiteCards ];
   let cardCount = props.whiteCards.length;
   for (let i = 0; i < 10; i++) {
     const randomIndex = Math.floor(Math.random() * cardCount);

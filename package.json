@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier --check 'pages/**/*.tsx'"
+    "prettier": "prettier --write src"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",

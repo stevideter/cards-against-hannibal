@@ -1,17 +1,25 @@
+import { Request, Response } from "express";
 import fetch from "isomorphic-unfetch";
-const setId = 'JP8FV';
+const setId = "JP8FV";
 const cardcastUrl = `https://api.cardcastgame.com/v1/decks/${setId}/cards`;
 
-export default async (req, res) => {
+interface CardcastCard {
+  text: string[];
+}
+interface CardcastCardSet {
+  calls: CardcastCard[];
+  responses: CardcastCard[];
+}
+export default async (_req: Request, res: Response) => {
   try {
     const fetchResponse = await fetch(cardcastUrl);
-    const data = await fetchResponse.json();
+    const data: CardcastCardSet = await fetchResponse.json();
 
-    const blackCards = data.calls.map((card) => {
+    const blackCards = data.calls.map((card: CardcastCard) => {
       const text = card.text.join("____");
       return { text };
     });
-    const whiteCards = data.responses.map((card) => {
+    const whiteCards = data.responses.map((card: CardcastCard) => {
       const text = card.text.join("");
       return { text };
     });

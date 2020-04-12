@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import GameBoard from "../../components/GameBoard/GameBoard";
 import useSWR from "swr";
+import GameBoard from "../../components/GameBoard/GameBoard";
 
-async function fetcher(url) {
+async function fetcher(url: string) {
   return fetch(url).then((r) => r.json());
 }
+
 const Game = () => {
   const { data, error } = useSWR("/api/createGame", fetcher);
   if (error) {

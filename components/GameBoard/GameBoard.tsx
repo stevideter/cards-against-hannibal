@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import BlackCard from "../BlackCard/BlackCard";
 import WhiteCard from "../WhiteCard/WhiteCard";
 
@@ -13,7 +13,15 @@ const StyledWhiteCards = styled.div`
   display: flex;
   flex-direction:row;
 `;
-const GameBoard = (props) => {
+interface Card {
+  text: string;
+  id: string;
+}
+interface GameBoardProps {
+  whiteCards: Card[];
+  blackCards: Card[];
+}
+const GameBoard = (props: GameBoardProps) => {
   let whiteCards = [];
   let fullDeck = [ ...props.whiteCards ];
   let cardCount = props.whiteCards.length;

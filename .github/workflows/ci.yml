@@ -26,3 +26,4 @@ jobs:
         node-version: '12.16'
     - run: npm ci
     - run: npm run lint
+    - run: npm test

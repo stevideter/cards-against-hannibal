@@ -1,30 +1,30 @@
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import GameBoard from "../../components/GameBoard/GameBoard";
+import { useRouter } from 'next/router';
+import useSWR from 'swr';
+import GameBoard from '../../components/GameBoard/GameBoard';
 
 async function fetcher(url: string): Promise<GameData> {
-  return fetch(url).then((r) => r.json());
+    return fetch(url).then((r) => r.json());
 }
 
 const Game = (): JSX.Element => {
-  const router = useRouter();
-  const { id } = router.query;
-  const { data, error } = useSWR("/api/createGame", fetcher);
-  if (error) {
-    return <div>Failed to load</div>;
-  }
-  if (!data) {
-    return <div>loading...</div>;
-  }
+    const router = useRouter();
+    const { id } = router.query;
+    const { data, error } = useSWR('/api/createGame', fetcher);
+    if (error) {
+        return <div>Failed to load</div>;
+    }
+    if (!data) {
+        return <div>loading...</div>;
+    }
 
-  const { blackCards, whiteCards } = data;
+    const { blackCards, whiteCards } = data;
 
-  return (
-    <div>
-      <p>Game: {id}</p>
-      <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
-    </div>
-  );
+    return (
+        <div>
+            <p>Game: {id}</p>
+            <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
+        </div>
+    );
 };
 
 export default Game;

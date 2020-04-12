@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "cm": "git-cz",
+    "dev": "next dev",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --write src",
-    "cm": "git-cz",
+    "start": "next start",
     "test": "jest"
   },
   "dependencies": {

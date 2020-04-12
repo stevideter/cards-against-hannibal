@@ -1,5 +1,6 @@
 interface CardcastCard {
     text: string[];
+    id: string;
 }
 interface CardcastCardSet {
     calls: CardcastCard[];

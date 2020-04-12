@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const Home = () => (
+const Home = (): JSX.Element => (
   <div className="container">
     <Head>
       <title>Cards Against Hannibal</title>
@@ -13,7 +13,7 @@ const Home = () => (
       </h1>
 
       <p className="description">
-        A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
+        A Cards Against Humanity clone in the spirit of Pretend You&apos;re Xyzzy
       </p>
 
       <div className="grid">

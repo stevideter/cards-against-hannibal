@@ -23,7 +23,8 @@ text-align: center;
 interface BlackCardProps {
   text: string;
 }
-const BlackCard = (props: BlackCardProps) => (
+
+const BlackCard = (props: BlackCardProps): JSX.Element => (
   <StyledBlackCard >
     <StyledP>{props.text}</StyledP>
   </StyledBlackCard>

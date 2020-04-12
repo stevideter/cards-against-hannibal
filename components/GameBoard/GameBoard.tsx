@@ -1,7 +1,18 @@
-import styles from "./GameBoard.module.css";
+import styled from 'styled-components'
 import BlackCard from "../BlackCard/BlackCard";
 import WhiteCard from "../WhiteCard/WhiteCard";
 
+const StyledGameBoard = styled.div`
+  background-color: white;   
+`;
+const StyledBlackCard = styled.div`
+  margin: 10px;
+`;
+const StyledWhiteCards = styled.div`
+  margin: 10px;
+  display: flex;
+  flex-direction:row;
+`;
 const GameBoard = (props) => {
   let whiteCards = [];
   let fullDeck = [ ...props.whiteCards ];
@@ -16,14 +27,14 @@ const GameBoard = (props) => {
 
   const blackCard = <BlackCard text={props.blackCards[randomIndex].text} />
   return (
-    <div className={styles.gameboard}>
-      <div className={styles.blackcard}>
+    <StyledGameBoard >
+      <StyledBlackCard >
         {blackCard }
-      </div>
-      <div className={styles.whitecards}>
+      </StyledBlackCard>
+      <StyledWhiteCards >
         {whiteCards}
-      </div>
-    </div>
+      </StyledWhiteCards>
+    </StyledGameBoard>
   );
 };
 

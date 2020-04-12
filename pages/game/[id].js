@@ -1,35 +1,30 @@
-import { useRouter } from 'next/router';
-import GameBoard from '../../components/GameBoard/GameBoard';
-import fetch from 'isomorphic-unfetch';
+import { useRouter } from "next/router";
+import GameBoard from "../../components/GameBoard/GameBoard";
+import useSWR from "swr";
 
-const Game = props => {
+async function fetcher(url) {
+  return fetch(url).then((r) => r.json());
+}
+const Game = () => {
+  const { data, error } = useSWR("/api/createGame", fetcher);
+  if (error) {
+    return <div>Failed to load</div>;
+  }
+  if (!data) {
+    return <div>loading...</div>;
+  }
+
+  const { blackCards, whiteCards } = data;
   const router = useRouter();
   const { id } = router.query;
 
-  return <div>
+  return (
+    <div>
       <p>Game: {id}</p>
-      <GameBoard whiteCards={props.whiteCards} blackCards={props.blackCards}/>
-      </div>
-}
-const setId = 'JP8FV';
-const cardcastUrl = `https://api.cardcastgame.com/v1/decks/${setId}/cards`;
-
-Game.getInitialProps = async function() {
-  const res = await fetch(cardcastUrl);
-  const data = await res.json();
-
-  const blackCards = data.calls.map((card) => {
-    const text = card.text.join('____');
-    return { text };
-  });
-  const whiteCards = data.responses.map((card) => {
-    const text = card.text.join('');
-    return { text };
-  });
-  return {
-    blackCards,
-    whiteCards
-  };
+      <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
+    </div>
+  );
 };
 
-export default Game
+
+export default Game;

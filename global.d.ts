@@ -14,3 +14,12 @@ interface GameData {
     blackCards: Card[];
     whiteCards: Card[];
 }
+interface Player {
+    id: string;
+    name: string;
+}
+interface Game {
+    id: string;
+    players: Player[];
+    state: string;
+}

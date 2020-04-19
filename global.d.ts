@@ -17,9 +17,12 @@ interface GameData {
 interface Player {
     id: string;
     name: string;
+    hand: Card[];
 }
 interface Game {
     id: string;
     players: Player[];
     state: string;
+    blackCards: Card[];
+    whiteCards: Card[];
 }

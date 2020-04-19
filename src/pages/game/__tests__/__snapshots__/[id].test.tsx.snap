@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game renders error on swr error 1`] = `
+<div>
+  Failed to load
+</div>
+`;
+
+exports[`Game renders game on data 1`] = `
+<div>
+  <p>
+    Game: 
+    id
+  </p>
+  <GameBoard
+    blackCards={Array []}
+    whiteCards={Array []}
+  />
+</div>
+`;
+
+exports[`Game renders loading on stale 1`] = `
+<div>
+  loading...
+</div>
+`;

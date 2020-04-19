@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlackCard renders correctly 1`] = `
+<div
+  className="sc-AxjAm iSiQYW"
+>
+  <p
+    className="sc-AxirZ kqXkCR"
+  >
+    text
+  </p>
+</div>
+`;

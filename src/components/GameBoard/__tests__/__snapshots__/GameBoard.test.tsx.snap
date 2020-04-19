@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game renders 1`] = `
+<div
+  className="sc-AxjAm fhsYJt"
+>
+  <div
+    className="sc-AxirZ geUgcE"
+  >
+    <BlackCard
+      text="text"
+    />
+  </div>
+  <div
+    className="sc-AxiKw cCTaBo"
+  >
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+    <WhiteCard
+      id="id"
+      text="text"
+    />
+  </div>
+</div>
+`;

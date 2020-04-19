@@ -9,7 +9,7 @@ async function fetcher(url: string): Promise<GameData> {
 const Game = (): JSX.Element => {
     const router = useRouter();
     const { id } = router.query;
-    const { data, error } = useSWR('/api/createGame', fetcher);
+    const { data, error } = useSWR('/api/getGame', fetcher);
     if (error) {
         return <div>Failed to load</div>;
     }

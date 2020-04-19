@@ -2,53 +2,58 @@
 
 exports[`Home renders correctly 1`] = `
 <div
-  className="jsx-3579657760 container"
+  className="jsx-3215839334 container"
 >
   <main
-    className="jsx-3579657760"
+    className="jsx-3215839334"
   >
     <h1
-      className="jsx-3579657760 title"
+      className="jsx-3215839334 title"
     >
       Welcome to Cards Against Hannibal
     </h1>
     <p
-      className="jsx-3579657760 description"
+      className="jsx-3215839334 description"
     >
       A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
     </p>
     <div
-      className="jsx-3579657760 grid"
+      className="jsx-3215839334 grid"
     >
       <a
-        className="jsx-3579657760 card"
+        className="jsx-3215839334 card"
         href="/"
       >
         <h3
-          className="jsx-3579657760"
+          className="jsx-3215839334"
         >
           Start a new game →
         </h3>
         <p
-          className="jsx-3579657760"
+          className="jsx-3215839334"
         >
           Start a game
         </p>
       </a>
+    </div>
+    <div
+      className="jsx-3215839334 grid"
+    >
       <a
-        className="jsx-3579657760 card"
-        href="/"
+        href="/game/one"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <h3
-          className="jsx-3579657760"
-        >
-          Join →
-        </h3>
-        <p
-          className="jsx-3579657760"
-        >
-          Join a game in progress
-        </p>
+        Game 
+        one
+      </a>
+      <a
+        href="/game/two"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Game 
+        two
       </a>
     </div>
   </main>

@@ -23,4 +23,6 @@ interface Game {
     id: string;
     players: Player[];
     state: string;
+    blackCards: Card[];
+    whiteCards: Card[];
 }

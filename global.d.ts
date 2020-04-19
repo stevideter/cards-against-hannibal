@@ -17,6 +17,7 @@ interface GameData {
 interface Player {
     id: string;
     name: string;
+    hand: Card[];
 }
 interface Game {
     id: string;

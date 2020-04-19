@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WhiteCard renders correctly 1`] = `
+<div
+  className="sc-AxjAm eopQut"
+  id="id"
+>
+  <p
+    className="sc-AxirZ ceEYOr"
+  >
+    text
+  </p>
+</div>
+`;

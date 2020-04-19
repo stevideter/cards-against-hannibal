@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div
+  className="jsx-3579657760 container"
+>
+  <main
+    className="jsx-3579657760"
+  >
+    <h1
+      className="jsx-3579657760 title"
+    >
+      Welcome to Cards Against Hannibal
+    </h1>
+    <p
+      className="jsx-3579657760 description"
+    >
+      A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
+    </p>
+    <div
+      className="jsx-3579657760 grid"
+    >
+      <a
+        className="jsx-3579657760 card"
+        href="/"
+      >
+        <h3
+          className="jsx-3579657760"
+        >
+          Start a new game →
+        </h3>
+        <p
+          className="jsx-3579657760"
+        >
+          Start a game
+        </p>
+      </a>
+      <a
+        className="jsx-3579657760 card"
+        href="/"
+      >
+        <h3
+          className="jsx-3579657760"
+        >
+          Join →
+        </h3>
+        <p
+          className="jsx-3579657760"
+        >
+          Join a game in progress
+        </p>
+      </a>
+    </div>
+  </main>
+</div>
+`;

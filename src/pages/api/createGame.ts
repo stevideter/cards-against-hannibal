@@ -7,6 +7,6 @@ export default async (_req: Request, res: Response): Promise<void> => {
         res.status(200).json(game);
     } catch (err) {
         console.error(err);
-        res.status(500).end();
+        res.sendStatus(500);
     }
 };

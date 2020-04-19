@@ -13,5 +13,7 @@ export const startGame = async (
         id: 'game',
         players: startGameRequest.players,
         state: 'started',
+        blackCards: [],
+        whiteCards: [],
     };
 };

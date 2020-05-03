@@ -11,7 +11,6 @@ const Game = (): JSX.Element => {
     const [nickname, setNickname] = useState('');
     useEffect(() => {
         const local = localStorage.getItem('nickname');
-        console.log(local);
         if (local) {
             const stored = JSON.parse(local);
             setNickname(stored.nickname);

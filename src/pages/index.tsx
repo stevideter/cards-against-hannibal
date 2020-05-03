@@ -16,7 +16,6 @@ const Home = (): JSX.Element => {
             localStorage.setItem('nickname', JSON.stringify({ nickname }));
         } else {
             const local = localStorage.getItem('nickname');
-            console.log(local);
             if (local) {
                 const stored = JSON.parse(local);
                 setNickname(stored.nickname);

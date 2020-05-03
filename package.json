@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --write src",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest -o -u"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",

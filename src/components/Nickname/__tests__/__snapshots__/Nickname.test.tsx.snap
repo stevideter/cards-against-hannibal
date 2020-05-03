@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nickname renders correctly 1`] = `
+Array [
+  <label>
+    Enter Nickname:
+  </label>,
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />,
+]
+`;

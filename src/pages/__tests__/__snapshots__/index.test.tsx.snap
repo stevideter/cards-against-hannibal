@@ -17,6 +17,14 @@ exports[`Home renders correctly 1`] = `
     >
       A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
     </p>
+    <label>
+      Enter Nickname:
+    </label>
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
     <div
       className="jsx-3215839334 grid"
     >

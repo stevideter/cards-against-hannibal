@@ -1,11 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Nickname from '../components/Nickname/Nickname';
+
 import useSWR from 'swr';
+import { useState } from 'react';
 async function fetcher(url: string): Promise<string[]> {
     return fetch(url).then((r) => r.json());
 }
 
 const Home = (): JSX.Element => {
+    const [nickname, setNickname] = useState('');
     const { data, error } = useSWR('/api/listGames', fetcher);
     if (error) {
         return <div>Failed to load</div>;
@@ -33,7 +37,8 @@ const Home = (): JSX.Element => {
                     A Cards Against Humanity clone in the spirit of Pretend
                     You&apos;re Xyzzy
                 </p>
-
+                <p>Hello {nickname}</p>
+                <Nickname nickname={nickname} setNickname={setNickname} />
                 <div className="grid">
                     <a href="/" className="card">
                         <h3>Start a new game &rarr;</h3>

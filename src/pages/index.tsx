@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
 import Nickname from '../components/Nickname/Nickname';
+import { NextPage } from 'next';
 
 async function fetcher(url: string): Promise<string[]> {
     return fetch(url).then((r) => r.json());
@@ -13,7 +14,7 @@ interface HomeProps {
     setNickname: Dispatch<SetStateAction<string>>;
 }
 
-const Home = (props: HomeProps): JSX.Element => {
+const Home: NextPage<HomeProps> = (props: HomeProps) => {
     const { nickname, setNickname } = props;
 
     const { data, error } = useSWR('/api/listGames', fetcher);

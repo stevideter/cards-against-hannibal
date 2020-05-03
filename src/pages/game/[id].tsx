@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import GameBoard from '../../components/GameBoard/GameBoard';
+import { NextPage } from 'next';
 
 async function fetcher(url: string): Promise<GameData> {
     return fetch(url).then((r) => r.json());
@@ -8,7 +9,7 @@ async function fetcher(url: string): Promise<GameData> {
 interface GameProps {
     nickname: string;
 }
-const Game = (props: GameProps): JSX.Element => {
+const Game: NextPage<GameProps> = (props: GameProps) => {
     const { nickname } = props;
 
     const router = useRouter();

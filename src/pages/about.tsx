@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { NextPage } from 'next';
 
 interface AboutProps {
     nickname: string;
 }
-const About = (props: AboutProps): JSX.Element => {
+const About: NextPage<AboutProps> = (props: AboutProps) => {
     const { nickname } = props;
     return (
         <div className="container">

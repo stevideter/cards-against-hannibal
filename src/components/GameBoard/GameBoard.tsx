@@ -20,7 +20,7 @@ interface GameBoardProps {
 
 const GameBoard: React.FunctionComponent<GameBoardProps> = (
     props: GameBoardProps
-): JSX.Element => {
+) => {
     const whiteCards = [];
     const fullDeck = [...props.whiteCards];
     let cardCount = props.whiteCards.length;

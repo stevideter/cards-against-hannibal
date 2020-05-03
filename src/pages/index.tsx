@@ -1,28 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
+import useSWR from 'swr';
 import Nickname from '../components/Nickname/Nickname';
 
-import useSWR from 'swr';
-import { useState, useEffect, useRef } from 'react';
 async function fetcher(url: string): Promise<string[]> {
     return fetch(url).then((r) => r.json());
 }
 
-const Home = (): JSX.Element => {
-    const [nickname, setNickname] = useState('');
-    const didMountRef = useRef(false);
-    useEffect(() => {
-        if (didMountRef.current) {
-            localStorage.setItem('nickname', JSON.stringify({ nickname }));
-        } else {
-            const local = localStorage.getItem('nickname');
-            if (local) {
-                const stored = JSON.parse(local);
-                setNickname(stored.nickname);
-            }
-            didMountRef.current = true;
-        }
-    });
+interface HomeProps {
+    nickname: string;
+    setNickname: Dispatch<SetStateAction<string>>;
+}
+
+const Home = (props: HomeProps): JSX.Element => {
+    const { nickname, setNickname } = props;
+
     const { data, error } = useSWR('/api/listGames', fetcher);
     if (error) {
         return <div>Failed to load</div>;

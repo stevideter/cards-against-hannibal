@@ -21,7 +21,6 @@ exports[`Home renders correctly 1`] = `
       className="jsx-3215839334"
     >
       Hello 
-      
     </p>
     <label>
       Enter Nickname:
@@ -29,7 +28,6 @@ exports[`Home renders correctly 1`] = `
     <input
       onChange={[Function]}
       type="text"
-      value=""
     />
     <a
       className="jsx-3215839334"

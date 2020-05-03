@@ -1,21 +1,15 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import GameBoard from '../../components/GameBoard/GameBoard';
-import { useState, useEffect } from 'react';
 
 async function fetcher(url: string): Promise<GameData> {
     return fetch(url).then((r) => r.json());
 }
-
-const Game = (): JSX.Element => {
-    const [nickname, setNickname] = useState('');
-    useEffect(() => {
-        const local = localStorage.getItem('nickname');
-        if (local) {
-            const stored = JSON.parse(local);
-            setNickname(stored.nickname);
-        }
-    });
+interface GameProps {
+    nickname: string;
+}
+const Game = (props: GameProps): JSX.Element => {
+    const { nickname } = props;
 
     const router = useRouter();
     const { id } = router.query;

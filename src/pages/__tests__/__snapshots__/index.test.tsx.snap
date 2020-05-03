@@ -17,6 +17,12 @@ exports[`Home renders correctly 1`] = `
     >
       A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
     </p>
+    <p
+      className="jsx-3215839334"
+    >
+      Hello 
+      
+    </p>
     <label>
       Enter Nickname:
     </label>
@@ -25,12 +31,20 @@ exports[`Home renders correctly 1`] = `
       type="text"
       value=""
     />
+    <a
+      className="jsx-3215839334"
+      href="/about"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      About
+    </a>
     <div
       className="jsx-3215839334 grid"
     >
       <a
         className="jsx-3215839334 card"
-        href="/"
+        href="/game/1"
       >
         <h3
           className="jsx-3215839334"

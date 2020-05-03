@@ -12,6 +12,10 @@ exports[`Game renders game on data 1`] = `
     Game: 
     id
   </p>
+  <p>
+    Player: 
+    
+  </p>
   <GameBoard
     blackCards={Array []}
     whiteCards={Array []}

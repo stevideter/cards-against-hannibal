@@ -8,7 +8,6 @@ Array [
   <input
     onChange={[Function]}
     type="text"
-    value=""
   />,
 ]
 `;

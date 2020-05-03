@@ -25,7 +25,9 @@ interface WhiteCardProps {
     id: string;
     text: string;
 }
-const WhiteCard = (props: WhiteCardProps): JSX.Element => (
+const WhiteCard: React.FunctionComponent<WhiteCardProps> = (
+    props: WhiteCardProps
+): JSX.Element => (
     <StyledWhiteCard id={props.id}>
         <StyledP>{props.text}</StyledP>
     </StyledWhiteCard>

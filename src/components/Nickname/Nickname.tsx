@@ -1,10 +1,12 @@
-import { useState, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 interface NicknameProps {
     nickname: string;
     setNickname: Dispatch<SetStateAction<string>>;
 }
 
-const Nickname = (props: NicknameProps) => {
+const Nickname: React.FunctionComponent<NicknameProps> = (
+    props: NicknameProps
+) => {
     const { nickname, setNickname } = props;
     return (
         <>

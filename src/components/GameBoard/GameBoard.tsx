@@ -18,7 +18,9 @@ interface GameBoardProps {
     blackCards: Card[];
 }
 
-const GameBoard = (props: GameBoardProps): JSX.Element => {
+const GameBoard: React.FunctionComponent<GameBoardProps> = (
+    props: GameBoardProps
+): JSX.Element => {
     const whiteCards = [];
     const fullDeck = [...props.whiteCards];
     let cardCount = props.whiteCards.length;

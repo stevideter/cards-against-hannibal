@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import GameBoard from '../../components/GameBoard/GameBoard';
 import { NextPage } from 'next';
 
-async function fetcher(url: string): Promise<GameData> {
+async function fetcher(url: string): Promise<Game> {
     return fetch(url).then((r) => r.json());
 }
 interface GameProps {
@@ -22,13 +22,21 @@ const Game: NextPage<GameProps> = (props: GameProps) => {
         return <div>loading...</div>;
     }
 
-    const { blackCards, whiteCards } = data;
+    const { blackCards, players } = data;
+    const playerList = players.map((player) => (
+        <div key={player.id}>{player.name}</div>
+    ));
 
     return (
         <div>
             <p>Game: {id}</p>
             <p>Player: {nickname}</p>
-            <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
+            <div>Players</div>
+            <div>{playerList}</div>
+            <GameBoard
+                whiteCards={players[0].hand || []}
+                blackCards={blackCards}
+            />
         </div>
     );
 };

@@ -15,7 +15,7 @@ describe('Game', () => {
             },
         });
         (useSWR as jest.Mock<any>).mockReturnValue({});
-        const tree = renderer.create(<Game />).toJSON();
+        const tree = renderer.create(<Game nickname="nick" />).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('renders game on data', () => {
@@ -25,13 +25,18 @@ describe('Game', () => {
             },
         });
         const data = {
+            players: [
+                {
+                    hand: [],
+                },
+            ],
             blackCards: [],
             whiteCards: [],
         };
         (useSWR as jest.Mock<any>).mockReturnValue({
             data,
         });
-        const tree = renderer.create(<Game />).toJSON();
+        const tree = renderer.create(<Game nickname="nick" />).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('renders error on swr error', () => {
@@ -46,7 +51,7 @@ describe('Game', () => {
         (useSWR as jest.Mock<any>).mockReturnValue({
             error,
         });
-        const tree = renderer.create(<Game />).toJSON();
+        const tree = renderer.create(<Game nickname="nick" />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });

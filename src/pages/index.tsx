@@ -3,13 +3,27 @@ import Link from 'next/link';
 import Nickname from '../components/Nickname/Nickname';
 
 import useSWR from 'swr';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 async function fetcher(url: string): Promise<string[]> {
     return fetch(url).then((r) => r.json());
 }
 
 const Home = (): JSX.Element => {
     const [nickname, setNickname] = useState('');
+    const didMountRef = useRef(false);
+    useEffect(() => {
+        if (didMountRef.current) {
+            localStorage.setItem('nickname', JSON.stringify({ nickname }));
+        } else {
+            const local = localStorage.getItem('nickname');
+            console.log(local);
+            if (local) {
+                const stored = JSON.parse(local);
+                setNickname(stored.nickname);
+            }
+            didMountRef.current = true;
+        }
+    });
     const { data, error } = useSWR('/api/listGames', fetcher);
     if (error) {
         return <div>Failed to load</div>;
@@ -39,8 +53,11 @@ const Home = (): JSX.Element => {
                 </p>
                 <p>Hello {nickname}</p>
                 <Nickname nickname={nickname} setNickname={setNickname} />
+                <Link href="/about">
+                    <a>About</a>
+                </Link>
                 <div className="grid">
-                    <a href="/" className="card">
+                    <a href="/game/1" className="card">
                         <h3>Start a new game &rarr;</h3>
                         <p>Start a game</p>
                     </a>

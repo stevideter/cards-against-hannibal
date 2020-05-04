@@ -20,7 +20,9 @@ exports[`Game renders game on data 1`] = `
     Players
   </div>
   <div>
-    <div />
+    <div>
+      name
+    </div>
   </div>
   <GameBoard
     blackCards={Array []}

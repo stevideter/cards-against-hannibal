@@ -27,6 +27,8 @@ describe('Game', () => {
         const data = {
             players: [
                 {
+                    id: 'one',
+                    name: 'name',
                     hand: [],
                 },
             ],

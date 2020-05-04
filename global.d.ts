@@ -17,12 +17,16 @@ interface GameData {
 interface Player {
     id: string;
     name: string;
-    hand: Card[];
+    hand?: Card[];
 }
-interface Game {
+interface Round {
+    count: number;
+    blackCard: Card;
+    whiteCards: Card[];
+}
+interface Game extends GameData {
     id: string;
     players: Player[];
     state: string;
-    blackCards: Card[];
-    whiteCards: Card[];
+    currentRound?: Round;
 }

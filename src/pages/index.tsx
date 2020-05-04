@@ -1,11 +1,22 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
+import Nickname from '../components/Nickname/Nickname';
+import { NextPage } from 'next';
+
 async function fetcher(url: string): Promise<string[]> {
     return fetch(url).then((r) => r.json());
 }
 
-const Home = (): JSX.Element => {
+interface HomeProps {
+    nickname: string;
+    setNickname: Dispatch<SetStateAction<string>>;
+}
+
+const Home: NextPage<HomeProps> = (props: HomeProps) => {
+    const { nickname, setNickname } = props;
+
     const { data, error } = useSWR('/api/listGames', fetcher);
     if (error) {
         return <div>Failed to load</div>;
@@ -33,9 +44,13 @@ const Home = (): JSX.Element => {
                     A Cards Against Humanity clone in the spirit of Pretend
                     You&apos;re Xyzzy
                 </p>
-
+                <p>Hello {nickname}</p>
+                <Nickname nickname={nickname} setNickname={setNickname} />
+                <Link href="/about">
+                    <a>About</a>
+                </Link>
                 <div className="grid">
-                    <a href="/" className="card">
+                    <a href="/game/1" className="card">
                         <h3>Start a new game &rarr;</h3>
                         <p>Start a game</p>
                     </a>

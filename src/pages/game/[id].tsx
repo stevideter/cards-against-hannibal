@@ -1,12 +1,17 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import GameBoard from '../../components/GameBoard/GameBoard';
+import { NextPage } from 'next';
 
-async function fetcher(url: string): Promise<GameData> {
+async function fetcher(url: string): Promise<Game> {
     return fetch(url).then((r) => r.json());
 }
+interface GameProps {
+    nickname: string;
+}
+const Game: NextPage<GameProps> = (props: GameProps) => {
+    const { nickname } = props;
 
-const Game = (): JSX.Element => {
     const router = useRouter();
     const { id } = router.query;
     const { data, error } = useSWR('/api/getGame', fetcher);
@@ -17,12 +22,21 @@ const Game = (): JSX.Element => {
         return <div>loading...</div>;
     }
 
-    const { blackCards, whiteCards } = data;
+    const { blackCards, players } = data;
+    const playerList = players.map((player) => (
+        <div key={player.id}>{player.name}</div>
+    ));
 
     return (
         <div>
             <p>Game: {id}</p>
-            <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
+            <p>Player: {nickname}</p>
+            <div>Players</div>
+            <div>{playerList}</div>
+            <GameBoard
+                whiteCards={players[0].hand || []}
+                blackCards={blackCards}
+            />
         </div>
     );
 };

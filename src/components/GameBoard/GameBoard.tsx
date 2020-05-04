@@ -18,23 +18,20 @@ interface GameBoardProps {
     blackCards: Card[];
 }
 
-const GameBoard = (props: GameBoardProps): JSX.Element => {
-    const whiteCards = [];
-    const fullDeck = [...props.whiteCards];
-    let cardCount = props.whiteCards.length;
-    for (let i = 0; i < 10; i++) {
-        const randomIndex = Math.floor(Math.random() * cardCount);
-        const card = fullDeck.splice(randomIndex, 1)[0];
-        whiteCards.push(<WhiteCard text={card.text} key={i} id={card.id} />);
-        cardCount--;
-    }
+const GameBoard: React.FunctionComponent<GameBoardProps> = (
+    props: GameBoardProps
+) => {
+    const { whiteCards } = props;
+    const whiteCardList = whiteCards.map((card, i) => (
+        <WhiteCard text={card.text} key={i} id={card.id} />
+    ));
     const randomIndex = Math.floor(Math.random() * props.blackCards.length);
 
     const blackCard = <BlackCard text={props.blackCards[randomIndex].text} />;
     return (
         <StyledGameBoard>
             <StyledBlackCard>{blackCard}</StyledBlackCard>
-            <StyledWhiteCards>{whiteCards}</StyledWhiteCards>
+            <StyledWhiteCards>{whiteCardList}</StyledWhiteCards>
         </StyledGameBoard>
     );
 };

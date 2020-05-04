@@ -24,7 +24,9 @@ interface BlackCardProps {
     text: string;
 }
 
-const BlackCard = (props: BlackCardProps): JSX.Element => (
+const BlackCard: React.FunctionComponent<BlackCardProps> = (
+    props: BlackCardProps
+) => (
     <StyledBlackCard>
         <StyledP>{props.text}</StyledP>
     </StyledBlackCard>

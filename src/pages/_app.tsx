@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import { useEffect, useRef, useState } from 'react';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     const [nickname, setNickname] = useState('');
     const didMountRef = useRef(false);
     useEffect(() => {
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             }
             didMountRef.current = true;
         }
-    });
+    }, [nickname]);
     const appProps = {
         nickname,
         setNickname,

@@ -14,7 +14,7 @@ const Nickname: React.FunctionComponent<NicknameProps> = (
             <input
                 type="text"
                 value={nickname}
-                onChange={(event) => setNickname(event.target.value)}
+                onChange={(event): void => setNickname(event.target.value)}
             />
         </>
     );

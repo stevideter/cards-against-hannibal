@@ -7,19 +7,22 @@ import renderer from 'react-test-renderer';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
+const mockUseRouter = useRouter as jest.Mock;
+const mockUseSWR = useSWR as jest.Mock;
+
 describe('Game', () => {
     it('renders loading on stale', () => {
-        (useRouter as jest.Mock<any>).mockReturnValue({
+        mockUseRouter.mockReturnValue({
             query: {
                 id: 'id',
             },
         });
-        (useSWR as jest.Mock<any>).mockReturnValue({});
+        mockUseSWR.mockReturnValue({});
         const tree = renderer.create(<Game nickname="nick" />).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('renders game on data', () => {
-        (useRouter as jest.Mock<any>).mockReturnValue({
+        mockUseRouter.mockReturnValue({
             query: {
                 id: 'id',
             },
@@ -35,14 +38,14 @@ describe('Game', () => {
             blackCards: [],
             whiteCards: [],
         };
-        (useSWR as jest.Mock<any>).mockReturnValue({
+        mockUseSWR.mockReturnValue({
             data,
         });
         const tree = renderer.create(<Game nickname="nick" />).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('renders error on swr error', () => {
-        (useRouter as jest.Mock<any>).mockReturnValue({
+        mockUseRouter.mockReturnValue({
             query: {
                 id: 'id',
             },
@@ -50,7 +53,7 @@ describe('Game', () => {
         const error = {
             message: 'error',
         };
-        (useSWR as jest.Mock<any>).mockReturnValue({
+        mockUseSWR.mockReturnValue({
             error,
         });
         const tree = renderer.create(<Game nickname="nick" />).toJSON();

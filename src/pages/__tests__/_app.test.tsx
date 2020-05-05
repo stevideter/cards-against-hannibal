@@ -11,7 +11,7 @@ describe('MyApp', () => {
         const appProps: AppProps = {
             pageProps: {},
             Component: TestPage,
-            router: {} as any,
+            router: {} as never,
         };
         const tree = renderer.create(<MyApp {...appProps} />).toJSON();
         expect(tree).toMatchSnapshot();

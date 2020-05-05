@@ -1,7 +1,7 @@
 import { getCards } from '../cardcastService/getCards';
 const setId = 'JP8FV';
 const cardsPerHand = 10;
-function dealHands(whiteCards: Card[], players: Player[]) {
+function dealHands(whiteCards: Card[], players: Player[]): void {
     const fullDeck = [...whiteCards];
     let cardCount = whiteCards.length;
     let playersCount = players.length;

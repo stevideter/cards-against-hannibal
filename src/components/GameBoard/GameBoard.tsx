@@ -15,19 +15,19 @@ const StyledWhiteCards = styled.div`
 `;
 interface GameBoardProps {
     whiteCards: Card[];
-    blackCards: Card[];
+    currentRound?: Round;
 }
 
 const GameBoard: React.FunctionComponent<GameBoardProps> = (
     props: GameBoardProps
 ) => {
-    const { whiteCards } = props;
+    const { whiteCards, currentRound } = props;
     const whiteCardList = whiteCards.map((card, i) => (
         <WhiteCard text={card.text} key={i} id={card.id} />
     ));
-    const randomIndex = Math.floor(Math.random() * props.blackCards.length);
+    const text = currentRound?.blackCard?.text || '';
 
-    const blackCard = <BlackCard text={props.blackCards[randomIndex].text} />;
+    const blackCard = <BlackCard text={text} />;
     return (
         <StyledGameBoard>
             <StyledBlackCard>{blackCard}</StyledBlackCard>

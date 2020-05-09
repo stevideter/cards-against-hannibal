@@ -37,6 +37,10 @@ describe('Game', () => {
             ],
             blackCards: [],
             whiteCards: [],
+            currentRound: {
+                count: 1,
+                blackCard: { id: 'id', text: 'text' },
+            },
         };
         mockUseSWR.mockReturnValue({
             data,

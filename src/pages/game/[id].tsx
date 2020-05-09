@@ -22,7 +22,7 @@ const Game: NextPage<GameProps> = (props: GameProps) => {
         return <div>loading...</div>;
     }
 
-    const { blackCards, players } = data;
+    const { currentRound, players } = data;
     const playerList = players.map((player) => (
         <div key={player.id}>{player.name}</div>
     ));
@@ -35,7 +35,7 @@ const Game: NextPage<GameProps> = (props: GameProps) => {
             <div>{playerList}</div>
             <GameBoard
                 whiteCards={players[0].hand || []}
-                blackCards={blackCards}
+                currentRound={currentRound}
             />
         </div>
     );

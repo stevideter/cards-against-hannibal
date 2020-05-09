@@ -16,6 +16,11 @@ function dealHands(whiteCards: Card[], players: Player[]): void {
         cardCount--;
     }
 }
+function pickBlackCard(blackCards: Card[]): Card {
+    const randomIndex = Math.floor(Math.random() * blackCards.length);
+    return blackCards[randomIndex];
+}
+
 export const getGame = async (id: string): Promise<Game | undefined> => {
     try {
         const gameData = await getCards(setId);
@@ -37,11 +42,17 @@ export const getGame = async (id: string): Promise<Game | undefined> => {
             },
         ];
         dealHands(gameData.whiteCards, players);
+        const currentRound: Round = {
+            count: 0,
+            blackCard: pickBlackCard(gameData.blackCards),
+            whiteCards: [],
+        };
         return {
             id,
             ...gameData,
             players,
             state: 'starting',
+            currentRound,
         };
     } catch (error) {
         console.error('unable to get game', error);

@@ -4,26 +4,28 @@ const cardsPerHand = 10;
 function dealHands(whiteCards: Card[], players: Player[]): void {
     const fullDeck = [...whiteCards];
     let cardCount = whiteCards.length;
-    let playersCount = players.length;
-    for (let i = 0, playerIndex = 0; i < cardsPerHand * players.length; i++) {
+    const totalToDeal = cardsPerHand * players.length;
+    const dealtCards: Card[] = [];
+    for (let i = 0; i < totalToDeal; i++) {
         const randomIndex = Math.floor(Math.random() * cardCount);
-        const card = fullDeck.splice(randomIndex, 1)[0];
-        const player = players[playerIndex];
-        if (player) {
-            player.hand?.push(card);
-        }
-        playerIndex = playerIndex == playersCount - 1 ? 0 : playersCount++;
+        dealtCards.push(fullDeck.splice(randomIndex, 1)[0]);
         cardCount--;
     }
+    players.forEach((player) => {
+        player.hand = dealtCards.splice(0, cardsPerHand);
+    });
 }
 function pickBlackCard(blackCards: Card[]): Card {
     const randomIndex = Math.floor(Math.random() * blackCards.length);
     return blackCards[randomIndex];
 }
 
-export const getGame = async (id: string): Promise<Game | undefined> => {
+export const getGame = async (id: string): Promise<Game> => {
     try {
         const gameData = await getCards(setId);
+        if (!gameData) {
+            throw new Error(`no game for id ${id}`);
+        }
         const players = [
             {
                 id: 'one',
@@ -56,5 +58,6 @@ export const getGame = async (id: string): Promise<Game | undefined> => {
         };
     } catch (error) {
         console.error('unable to get game', error);
+        throw error;
     }
 };

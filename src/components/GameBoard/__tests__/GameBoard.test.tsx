@@ -13,18 +13,17 @@ describe('Game', () => {
                 return arr;
             }, [])
             .map(() => ({ id: 'id', text: 'text' }));
-
-        const blackCards: Card[] = Array(10)
-            .fill(0)
-            .reduce((arr) => {
-                arr.push(arr.length);
-                return arr;
-            }, [])
-            .map(() => ({ id: 'id', text: 'text' }));
-
+        const currentRound: Round = {
+            count: 1,
+            blackCard: { id: 'id', text: 'text' },
+            whiteCards: [],
+        };
         const tree = renderer
             .create(
-                <GameBoard whiteCards={whiteCards} blackCards={blackCards} />
+                <GameBoard
+                    whiteCards={whiteCards}
+                    currentRound={currentRound}
+                />
             )
             .toJSON();
         expect(tree).toMatchSnapshot();

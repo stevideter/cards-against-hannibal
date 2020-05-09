@@ -25,7 +25,15 @@ exports[`Game renders game on data 1`] = `
     </div>
   </div>
   <GameBoard
-    blackCards={Array []}
+    currentRound={
+      Object {
+        "blackCard": Object {
+          "id": "id",
+          "text": "text",
+        },
+        "count": 1,
+      }
+    }
     whiteCards={Array []}
   />
 </div>

@@ -22,51 +22,61 @@ exports[`Game renders 1`] = `
     className="sc-AxhCb reGgE"
   >
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
       id="id"
       text="text"

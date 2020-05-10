@@ -30,12 +30,16 @@ interface WhiteCardProps {
     id: string;
     text: string;
     dispatch: Dispatch<GameBoardAction>;
+    canSelect: boolean;
 }
 const WhiteCard: React.FunctionComponent<WhiteCardProps> = (
     props: WhiteCardProps
 ) => {
+    const { canSelect, dispatch } = props;
     function onClick(): void {
-        props.dispatch({ type: 'playCard', payload: props.id });
+        if (canSelect) {
+            dispatch({ type: 'playCard', payload: props.id });
+        }
     }
     return (
         <StyledWhiteCard id={props.id} onClick={onClick}>

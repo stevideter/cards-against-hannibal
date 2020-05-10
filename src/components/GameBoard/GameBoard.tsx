@@ -30,10 +30,12 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
     type GameBoardState = {
         cardsInPlay: Card[];
         whiteCards: Card[];
+        canSelect: boolean;
     };
     const initialState: GameBoardState = {
         cardsInPlay: [],
         whiteCards,
+        canSelect: true,
     };
 
     function cardsInPlayReducer(
@@ -54,6 +56,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                         ...state,
                         cardsInPlay: cards,
                         whiteCards: updatedCards,
+                        canSelect: false,
                     };
                 }
             }
@@ -77,6 +80,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                             id={card.id}
                             text={card.text}
                             dispatch={dispatch}
+                            canSelect={state.canSelect}
                         />
                     ))}
                 </StyledWhiteCards>
@@ -88,6 +92,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                         id={card.id}
                         text={card.text}
                         dispatch={dispatch}
+                        canSelect={state.canSelect}
                     />
                 ))}
             </StyledWhiteCards>

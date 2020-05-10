@@ -2,23 +2,23 @@
 
 exports[`Home renders correctly 1`] = `
 <div
-  className="jsx-3215839334 container"
+  className="jsx-3443756320 container"
 >
   <main
-    className="jsx-3215839334"
+    className="jsx-3443756320"
   >
     <h1
-      className="jsx-3215839334 title"
+      className="jsx-3443756320 title"
     >
       Welcome to Cards Against Hannibal
     </h1>
     <p
-      className="jsx-3215839334 description"
+      className="jsx-3443756320 description"
     >
       A Cards Against Humanity clone in the spirit of Pretend You're Xyzzy
     </p>
     <p
-      className="jsx-3215839334"
+      className="jsx-3443756320"
     >
       Hello 
     </p>
@@ -30,7 +30,7 @@ exports[`Home renders correctly 1`] = `
       type="text"
     />
     <a
-      className="jsx-3215839334"
+      className="jsx-3443756320"
       href="/about"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -38,26 +38,26 @@ exports[`Home renders correctly 1`] = `
       About
     </a>
     <div
-      className="jsx-3215839334 grid"
+      className="jsx-3443756320 grid"
     >
       <a
-        className="jsx-3215839334 card"
+        className="jsx-3443756320 card"
         href="/game/1"
       >
         <h3
-          className="jsx-3215839334"
+          className="jsx-3443756320"
         >
           Start a new game →
         </h3>
         <p
-          className="jsx-3215839334"
+          className="jsx-3443756320"
         >
           Start a game
         </p>
       </a>
     </div>
     <div
-      className="jsx-3215839334 grid"
+      className="jsx-3443756320 grid"
     >
       <a
         href="/game/one"

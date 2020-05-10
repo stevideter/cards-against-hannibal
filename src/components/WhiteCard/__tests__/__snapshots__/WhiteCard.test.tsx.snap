@@ -2,12 +2,12 @@
 
 exports[`WhiteCard renders correctly 1`] = `
 <div
-  className="sc-AxjAm eopQut"
+  className="sc-AxjAm hwiaAn"
   id="id"
   onClick={[Function]}
 >
   <p
-    className="sc-AxirZ ceEYOr"
+    className="sc-AxirZ URWBl"
   >
     text
   </p>

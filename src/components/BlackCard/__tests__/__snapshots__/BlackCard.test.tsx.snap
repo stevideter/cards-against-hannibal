@@ -2,10 +2,10 @@
 
 exports[`BlackCard renders correctly 1`] = `
 <div
-  className="sc-AxjAm iSiQYW"
+  className="sc-AxjAm hQXlrX"
 >
   <p
-    className="sc-AxirZ kqXkCR"
+    className="sc-AxirZ URWBl"
   >
     text
   </p>

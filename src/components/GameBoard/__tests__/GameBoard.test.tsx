@@ -12,10 +12,10 @@ describe('Game', () => {
                 arr.push(arr.length);
                 return arr;
             }, [])
-            .map(() => ({ id: 'id', text: 'text' }));
+            .map((num: unknown) => ({ id: num, text: 'text' }));
         const currentRound: Round = {
             count: 1,
-            blackCard: { id: 'id', text: 'text' },
+            blackCard: { id: 'id', text: 'text', blanks: 1 },
             whiteCards: [],
         };
         const tree = renderer

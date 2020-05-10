@@ -33,10 +33,12 @@ const Game: NextPage<GameProps> = (props: GameProps) => {
             <p>Player: {nickname}</p>
             <div>Players</div>
             <div>{playerList}</div>
-            <GameBoard
-                whiteCards={players[0].hand || []}
-                currentRound={currentRound}
-            />
+            {currentRound && (
+                <GameBoard
+                    whiteCards={players[0].hand || []}
+                    currentRound={currentRound}
+                />
+            )}
         </div>
     );
 };

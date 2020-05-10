@@ -11,8 +11,14 @@ exports[`Game renders 1`] = `
       className="sc-AxirZ geUgcE"
     >
       <BlackCard
+        id="id"
         text="text"
       />
+      <div>
+        Select 
+        1
+         card(s)
+      </div>
     </div>
     <div
       className="sc-AxhCb reGgE"
@@ -22,53 +28,63 @@ exports[`Game renders 1`] = `
     className="sc-AxhCb reGgE"
   >
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={0}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={1}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={2}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={3}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={4}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={5}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={6}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={7}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={8}
       text="text"
     />
     <WhiteCard
+      canSelect={true}
       dispatch={[Function]}
-      id="id"
+      id={9}
       text="text"
     />
   </div>

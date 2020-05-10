@@ -8,7 +8,7 @@ export const getCards = async (setId: string): Promise<GameData> => {
 
         const blackCards = data.calls.map((card: CardcastCard) => {
             const text = card.text.join('____');
-            return { text, id: card.id };
+            return { text, id: card.id, blanks: card.text.length - 1 };
         });
         const whiteCards = data.responses.map((card: CardcastCard) => {
             const text = card.text.join('');

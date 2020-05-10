@@ -19,7 +19,7 @@ const StyledWhiteCards = styled.div`
 `;
 interface GameBoardProps {
     whiteCards: Card[];
-    currentRound?: Round;
+    currentRound: Round;
 }
 export type GameBoardAction = { type: 'playCard'; payload: string };
 
@@ -30,10 +30,14 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
     type GameBoardState = {
         cardsInPlay: Card[];
         whiteCards: Card[];
+        canSelect: boolean;
+        blanks: number;
     };
     const initialState: GameBoardState = {
         cardsInPlay: [],
         whiteCards,
+        canSelect: true,
+        blanks: currentRound.blackCard.blanks || 0,
     };
 
     function cardsInPlayReducer(
@@ -54,6 +58,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                         ...state,
                         cardsInPlay: cards,
                         whiteCards: updatedCards,
+                        canSelect: cards.length < state.blanks,
                     };
                 }
             }
@@ -63,13 +68,16 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
 
     const [state, dispatch] = useReducer(cardsInPlayReducer, initialState);
 
-    const text = currentRound?.blackCard?.text || '';
+    const { id, text, blanks } = currentRound.blackCard;
 
-    const blackCard = <BlackCard text={text} />;
+    const blackCard = <BlackCard id={id} text={text} />;
     return (
         <StyledGameBoard>
             <StyledCardsInPlay>
-                <StyledBlackCard>{blackCard}</StyledBlackCard>
+                <StyledBlackCard>
+                    {blackCard}
+                    <div>Select {blanks} card(s)</div>
+                </StyledBlackCard>
                 <StyledWhiteCards>
                     {state.cardsInPlay.map((card) => (
                         <WhiteCard
@@ -77,6 +85,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                             id={card.id}
                             text={card.text}
                             dispatch={dispatch}
+                            canSelect={state.canSelect}
                         />
                     ))}
                 </StyledWhiteCards>
@@ -88,6 +97,7 @@ const GameBoard: React.FunctionComponent<GameBoardProps> = (
                         id={card.id}
                         text={card.text}
                         dispatch={dispatch}
+                        canSelect={state.canSelect}
                     />
                 ))}
             </StyledWhiteCards>

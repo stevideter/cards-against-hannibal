@@ -25,13 +25,14 @@ const StyledP = styled.p`
     text-size-adjust: 100%;
 `;
 interface BlackCardProps {
+    id: string;
     text: string;
 }
 
 const BlackCard: React.FunctionComponent<BlackCardProps> = (
     props: BlackCardProps
 ) => (
-    <StyledBlackCard>
+    <StyledBlackCard id={props.id}>
         <StyledP>{props.text}</StyledP>
     </StyledBlackCard>
 );

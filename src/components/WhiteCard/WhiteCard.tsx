@@ -32,7 +32,6 @@ const WhiteCard: React.FunctionComponent<WhiteCardProps> = (
     props: WhiteCardProps
 ) => {
     function onClick(): void {
-        console.log('clicked');
         props.dispatch({ type: 'playCard', payload: props.id });
     }
     return (

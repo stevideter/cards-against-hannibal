@@ -114,7 +114,7 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
                     border-radius: 5px;
                     padding: 0.75rem;
                     font-size: 1.1rem;
-                    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+                    font-family: Monaco, Lucida Console, Liberation Mono,
                         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
                         monospace;
                 }

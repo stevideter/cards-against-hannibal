@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Dispatch } from 'react';
+import { GameBoardAction } from '../GameBoard/GameBoard';
 
 const StyledWhiteCard = styled.div`
     background: white;
@@ -24,13 +26,19 @@ const StyledP = styled.p`
 interface WhiteCardProps {
     id: string;
     text: string;
+    dispatch: Dispatch<GameBoardAction>;
 }
 const WhiteCard: React.FunctionComponent<WhiteCardProps> = (
     props: WhiteCardProps
-) => (
-    <StyledWhiteCard id={props.id}>
-        <StyledP>{props.text}</StyledP>
-    </StyledWhiteCard>
-);
+) => {
+    function onClick(): void {
+        props.dispatch({ type: 'playCard', payload: props.id });
+    }
+    return (
+        <StyledWhiteCard id={props.id} onClick={onClick}>
+            <StyledP>{props.text}</StyledP>
+        </StyledWhiteCard>
+    );
+};
 
 export default WhiteCard;

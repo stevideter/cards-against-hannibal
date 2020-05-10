@@ -5,52 +5,69 @@ exports[`Game renders 1`] = `
   className="sc-AxjAm fhsYJt"
 >
   <div
-    className="sc-AxirZ geUgcE"
+    className="sc-AxiKw fkSgHu"
   >
-    <BlackCard
-      text="text"
+    <div
+      className="sc-AxirZ geUgcE"
+    >
+      <BlackCard
+        text="text"
+      />
+    </div>
+    <div
+      className="sc-AxhCb reGgE"
     />
   </div>
   <div
-    className="sc-AxiKw cCTaBo"
+    className="sc-AxhCb reGgE"
   >
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />
     <WhiteCard
+      dispatch={[Function]}
       id="id"
       text="text"
     />

@@ -4,6 +4,7 @@ exports[`WhiteCard renders correctly 1`] = `
 <div
   className="sc-AxjAm eopQut"
   id="id"
+  onClick={[Function]}
 >
   <p
     className="sc-AxirZ ceEYOr"
